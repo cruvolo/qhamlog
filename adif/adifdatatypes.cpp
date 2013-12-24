@@ -53,6 +53,8 @@ std::string replaceNewlines(const std::string &str)
         qDebug() << "  at pos " << pos;
         result.replace(pos, nl.size(), rep);
     }
+#else
+# error "Unsupported or unconfigured platform."
 #endif
 
     return result;

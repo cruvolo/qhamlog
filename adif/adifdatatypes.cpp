@@ -46,9 +46,7 @@ std::string replaceNewlines(const std::string &str)
         qDebug() << "  at pos " << pos;
         result.replace(pos, crnl.size(), rep);
     }
-#endif
-
-#ifdef PLAT_NIX
+#elif defined(PLAT_NIX)
     // search for NL
     while((pos = result.find(nl, pos)) != std::string::npos) {
         // replace with a space
